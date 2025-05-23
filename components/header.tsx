@@ -1,6 +1,6 @@
 "use client";
 
-import { QrCode } from "lucide-react";
+import { Clock, QrCode } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 import Link from "next/link";
@@ -12,9 +12,9 @@ export const navLink = [
     icon: <QrCode />,
   },
   {
-    name: "Coming Soon",
-    path: "/soon",
-    icon: <QrCode />,
+    name: "Pomodoro Timer",
+    path: "/pomodoro-timer",
+    icon: <Clock />,
   },
 ];
 
@@ -27,6 +27,7 @@ const Header = () => {
         key={link.path}
         variant={pathname === link.path ? "outline" : "ghost"}
         className="m-1"
+        asChild
       >
         <Link href={link.path} className="flex items-center">
           {link.icon}
